@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.10)
+project(CurveRateCalculator)
+
+# Set the C++ standard
+set(CMAKE_CXX_STANDARD 17)
+
+# Add the executable target
+add_executable(CurveRateCalculator
+    main.cpp
+    CurveCalculator.cpp
+    CurveReader.cpp
+    GraphGenerator.cpp
+)
+
+# Include directories
+target_include_directories(CurveRateCalculator PRIVATE ${CMAKE_SOURCE_DIR})
+
+# Optional: Add warnings during compilation
+target_compile_options(CurveRateCalculator PRIVATE -Wall -Wextra -pedantic)
+
+# Optional: Link any necessary libraries here

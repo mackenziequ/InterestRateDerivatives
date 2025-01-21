@@ -5,8 +5,11 @@
 #include <unordered_map>
 #include <cmath>
 #include <iomanip>
+#include <cstdlib>
 #include "CurveCalculator.h"
 #include "CurveReader.h"
+#include "GraphGenerator.h"
+
 
 int main(int argc, const char*argv[]){
     if (argc != 2){
@@ -132,5 +135,11 @@ int main(int argc, const char*argv[]){
         }
         std::cout << std::endl;
     }
+    generateSpotCurve("data/output", Ts, curves_discrete["spot"]);
+    generateForwardCurve("data/output/", Ts, curves_discrete["fwd"]);
+
+    std::cout << "Graphs generated in 'output_graphs/'." << std::endl;
+
+
     return 0;
 }
